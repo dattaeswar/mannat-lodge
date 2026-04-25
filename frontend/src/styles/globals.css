@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Poppins', system-ui, sans-serif;
+    background-color: #f8fafc;
+    color: #1a2332;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-body font-semibold
+           hover:bg-primary-light transition-all duration-200 shadow-river
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-gold {
+    @apply bg-gold text-primary-dark px-6 py-3 rounded-lg font-body font-semibold
+           hover:bg-gold-light transition-all duration-200 shadow-gold
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-body font-semibold
+           hover:bg-primary hover:text-white transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply text-primary px-4 py-2 rounded-lg font-body font-medium
+           hover:bg-sky-godavari transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-card overflow-hidden;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-lg font-body
+           focus:outline-none focus:ring-2 focus:ring-river focus:border-transparent
+           placeholder:text-gray-400 transition-all duration-200;
+  }
+
+  .input-error {
+    @apply border-red-400 focus:ring-red-300;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1.5 font-body;
+  }
+
+  .section-title {
+    @apply font-heading text-3xl md:text-4xl text-primary-dark font-bold;
+  }
+
+  .section-subtitle {
+    @apply font-body text-gray-600 text-lg mt-2;
+  }
+
+  .badge-pending {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold
+           bg-amber-100 text-amber-800;
+  }
+
+  .badge-approved {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold
+           bg-green-100 text-green-800;
+  }
+
+  .badge-rejected {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold
+           bg-red-100 text-red-800;
+  }
+
+  .badge-paid {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold
+           bg-blue-100 text-blue-800;
+  }
+
+  .water-divider {
+    @apply w-full h-1 bg-gradient-to-r from-primary via-river to-river-mist rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-godavari {
+    background: linear-gradient(135deg, #1a4a6b, #4a90a4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Razorpay modal z-index fix */
+.razorpay-container {
+  z-index: 9999 !important;
+}
+
+/* React datepicker overrides */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+.react-datepicker__input-container input {
+  @apply input-field;
+}
+.react-datepicker__header {
+  background-color: #1a4a6b !important;
+  border-bottom: none !important;
+}
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: white !important;
+}
+.react-datepicker__day--selected,
+.react-datepicker__day--in-range {
+  background-color: #4a90a4 !important;
+}
+.react-datepicker__day--keyboard-selected {
+  background-color: #2d6e9e !important;
+}

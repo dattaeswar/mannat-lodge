@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(node -e \"const b=require\\('bcryptjs'\\);console.log\\(b.hashSync\\('Mannat@Admin123',10\\)\\)\")",
+      "Bash(node -e \"const b=require\\('./node_modules/bcryptjs'\\);console.log\\(b.hashSync\\('Mannat@Admin123',10\\)\\)\")",
+      "Bash(timeout 5 node server.js)",
+      "Bash(timeout 4 node server.js)",
+      "Bash(node server.js)",
+      "Bash(curl -s http://localhost:3000/api/rooms)"
+    ]
+  }
+}
